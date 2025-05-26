@@ -19,7 +19,7 @@ source "amazon-ebs" "ubuntu-node" {
   instance_type    = "t3.medium"
   ami_name         = "node-app-ami-{{timestamp}}"
   ssh_username     = "ubuntu"
-
+}
 
 
 build {
