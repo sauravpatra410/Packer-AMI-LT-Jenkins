@@ -10,12 +10,12 @@ packer {
 
 variable "aws_region" {
   type    = string
-  default = "us-east-1"
+  default = "ap-south-2"
 }
 
 source "amazon-ebs" "ubuntu-node" {
   region           = var.aws_region
-  instance_type    = "t2.medium"
+  instance_type    = "t3.medium"
   ami_name         = "node-app-ami-{{timestamp}}"
   ssh_username     = "ubuntu"
 
