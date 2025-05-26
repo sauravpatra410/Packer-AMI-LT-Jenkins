@@ -6,7 +6,7 @@ packer {
     }
   }
 }
-####veera
+
 
 variable "aws_region" {
   type    = string
@@ -44,7 +44,7 @@ build {
     source      = "scripts/install.sh"
     destination = "/tmp/install.sh"
   }
-####veera
+
   provisioner "shell" {
     inline = [
       "chmod +x /tmp/install.sh",
