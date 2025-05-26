@@ -10,17 +10,25 @@ packer {
 
 variable "aws_region" {
   type    = string
-  default = "ap-south-2"
+  default = "us-east-1"
 }
 
 source "amazon-ebs" "ubuntu-node" {
   region           = var.aws_region
-  source_ami         = "ami-053a0835435bf4f45"
-  instance_type    = "t3.medium"
+  instance_type    = "t2.medium"
   ami_name         = "node-app-ami-{{timestamp}}"
   ssh_username     = "ubuntu"
-}
 
+  source_ami_filter {
+    filters = {
+      name                = "ubuntu/images/hvm-ssd/ubuntu-focal-20.04-amd64-server-*"
+      root-device-type    = "ebs"
+      virtualization-type = "hvm"
+    }
+    owners      = ["099720109477"]
+    most_recent = true
+  }
+}
 
 build {
   name    = "build-node-app-ami"
