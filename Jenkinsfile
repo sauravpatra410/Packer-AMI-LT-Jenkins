@@ -2,9 +2,9 @@ pipeline {
     agent any
 
     environment {
-        AWS_REGION = 'ap-south-2'
-        LAUNCH_TEMPLATE_ID = 'lt-07b5f483c2263501d'
-        ASG_NAME = "ASG"
+        AWS_REGION = 'ap-south-1'
+        LAUNCH_TEMPLATE_ID = 'lt-056ad23d849aa88ce'
+        ASG_NAME = "ASG-Packer"
         
     }
 
