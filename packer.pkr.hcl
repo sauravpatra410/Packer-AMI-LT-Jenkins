@@ -10,7 +10,7 @@ packer {
 
 variable "aws_region" {
   type    = string
-  default = "ap-south-2"
+  default = "ap-south-1"
 }
 
 source "amazon-ebs" "ubuntu-node" {
